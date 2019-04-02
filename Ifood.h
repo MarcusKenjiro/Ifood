@@ -9,7 +9,7 @@ public:
 	Ifood();
 	~Ifood();
 	
-	void verRestaurante();
+	char verRestaurante();
 
 private:
 	char restaurante;
