@@ -1,8 +1,11 @@
 #include <iostream>
-using std::cout;
+#include "Ifood.h"
 
 int main(int argc, char **argv)
 {
-	cout << "hello world\n";
+	cout << "Restaurante verificado com sucesso\n";
+    
+    Ifood rest1("RockyBurger");
+    
 	return 0;
 }
