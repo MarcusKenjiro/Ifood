@@ -1,4 +1,7 @@
 #include "Ifood.h"
+#include <iostream>
+using std::cout;
+
 
 Ifood::Ifood(string rest)
 {
@@ -35,4 +38,14 @@ void Ifood::setRest(string rest)
 void Ifood::setRest()
 {
     restaurante = "Restaurante 01"
+}
+
+string Ifood::verRestaurante(string nome)
+{
+    cout << rest;
+}
+
+string Ifood::verRestaurante(int id)
+{
+    cout << id + rest;
 }

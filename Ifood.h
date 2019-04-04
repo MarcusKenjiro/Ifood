@@ -19,11 +19,15 @@ public:
     
     void setRest();
     
-	string verRestaurante();
+	string verRestaurante( string );
+    
+    string verRestaurante( int );
 
 private:
 
 	string restaurante;
+    string nome;
+    int id;
 
 };
 
