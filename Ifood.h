@@ -3,7 +3,7 @@
 #include <string>
 using std::string;
 
-#include <iostrem>
+#include <iostream>
 using std::cout;
 
 
@@ -11,16 +11,19 @@ class Ifood
 {
 public:
 
-	Ifood( char );
+	Ifood( string );
+    Ifood();
 	~Ifood();
     
-	void setRest( char );
+	void setRest( string );
     
-	char verRestaurante();
+    void setRest();
+    
+	string verRestaurante();
 
 private:
 
-	char restaurante;
+	string restaurante;
 
 };
 
