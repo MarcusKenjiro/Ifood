@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Ifood
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/git/Aplicativo
-ProjectPath            :=C:/git/Aplicativo/Ifood
+WorkspacePath          :=C:/Users/Aluno/Documents/Aplicativio
+ProjectPath            :=C:/Users/Aluno/Documents/Aplicativio/Ifood
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Aluno
-Date                   :=03/04/2019
+Date                   :=08/04/2019
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
@@ -62,7 +62,7 @@ AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ifood.cpp$(ObjectSuffix) 
 
 
 
@@ -94,12 +94,20 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/git/Aplicativo/Ifood/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Aluno/Documents/Aplicativio/Ifood/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix)main.cpp
+
+$(IntermediateDirectory)/Ifood.cpp$(ObjectSuffix): Ifood.cpp $(IntermediateDirectory)/Ifood.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Aluno/Documents/Aplicativio/Ifood/Ifood.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Ifood.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Ifood.cpp$(DependSuffix): Ifood.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Ifood.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Ifood.cpp$(DependSuffix) -MM Ifood.cpp
+
+$(IntermediateDirectory)/Ifood.cpp$(PreprocessSuffix): Ifood.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Ifood.cpp$(PreprocessSuffix)Ifood.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

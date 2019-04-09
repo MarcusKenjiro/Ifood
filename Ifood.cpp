@@ -1,9 +1,15 @@
 #include "Ifood.h"
 #include <iostream>
 using std::cout;
+using std::cout;
+
+#include <string>
+using std::string;
 
 
-Ifood::Ifood(string rest)
+
+
+Ifood::Ifood(string &rest)
 {
     setRest( rest );
 }
@@ -17,7 +23,7 @@ Ifood::~Ifood()
 {
 }
  
-void Ifood::setRest(string rest)
+void Ifood::setRest( string &rest )
 {
     int len=0, cont=0, verif = 0;
     while( rest[cont] != '\0' ){
@@ -29,9 +35,7 @@ void Ifood::setRest(string rest)
         len++;
     }
     if(verif == 0){
-        for(cont = 0; len > count; cont++){
-            restaurante[cont] = rest[cont];
-        }
+        restaurante = rest;
     }
 }
 
@@ -40,12 +44,12 @@ void Ifood::setRest()
     restaurante = "Restaurante 01"
 }
 
-string Ifood::verRestaurante(string nome)
+string Ifood::verRestaurante(const string &nome) const
 {
     cout << rest;
 }
 
-string Ifood::verRestaurante(int id)
+string Ifood::verRestaurante(const int id) const
 {
     cout << id + rest;
 }

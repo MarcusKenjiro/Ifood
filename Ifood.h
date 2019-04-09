@@ -1,5 +1,6 @@
 #ifndef IFOOD_H
 #define IFOOD_H
+
 #include <string>
 using std::string;
 
@@ -11,23 +12,24 @@ class Ifood
 {
 public:
 
-	Ifood( string );
+	Ifood( string &);
     Ifood();
 	~Ifood();
     
-	void setRest( string );
+	void setRest( string &);
     
     void setRest();
     
-	string verRestaurante( string );
+	string verRestaurante(const string &);
     
-    string verRestaurante( int );
+    string verRestaurante(const int );
 
 private:
 
 	string restaurante;
     string nome;
     int id;
+    int nPedidos;
 
 };
 
