@@ -1,35 +1,37 @@
 #ifndef IFOOD_H
 #define IFOOD_H
-
 #include <string>
 using std::string;
-
-#include <iostream>
+#include<iostream>
+using std::cin;
 using std::cout;
 
 
 class Ifood
 {
 public:
+	Ifood( int );
 
-	Ifood( string &);
-    Ifood();
+	Ifood( const string & );
+
 	~Ifood();
-    
-	void setRest( string &);
-    
-    void setRest();
-    
-	string verRestaurante(const string &);
-    
-    string verRestaurante(const int );
 
+	void setPedido( int );
+
+	void setPedido ( const string & );
+
+    void pedir (string &);
+
+	void verPedido(const int);
+
+	float pagar( float );
+    
 private:
-
-	string restaurante;
+    int idPedido;
     string nome;
-    int id;
-    int nPedidos;
+	string nomePedido;
+	float conta;
+	
 
 };
 

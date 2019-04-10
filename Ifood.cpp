@@ -1,55 +1,70 @@
 #include "Ifood.h"
-#include <iostream>
-using std::cout;
-using std::cout;
 
-#include <string>
-using std::string;
-
-
-
-
-Ifood::Ifood(string &rest)
+Ifood::Ifood(int pedidos)
 {
-    setRest( rest );
+	setPedido( pedidos );
 }
 
-Ifood::Ifood()
+Ifood::Ifood(const string &rest)
 {
-    setRest();
+	setPedido( rest );
 }
 
 Ifood::~Ifood()
 {
 }
- 
-void Ifood::setRest( string &rest )
+
+void Ifood::setPedido( int pedidos )
 {
-    int len=0, cont=0, verif = 0;
-    while( rest[cont] != '\0' ){
-        if( 'Z'<= rest[cont] >= 'A' || 'z'<= rest[cont] >= 'a' || '0'<= rest[cont] >= '9'){
-        
-        }else{
-            verif = 1;
-        }
-        len++;
+    if( pedidos > 0 )
+    {
+        idPedido = pedidos;
+        cout << "Id do pedido registrado com sucesso\n";
     }
-    if(verif == 0){
-        restaurante = rest;
-    }
+    else{
+        idPedido = 0;
+		cout << "falha no Id do pedido";
+	}
 }
 
-void Ifood::setRest()
-{
-    restaurante = "Restaurante 01"
+void Ifood::setPedido(const string &rest){
+	if(rest != " "){
+		nome = rest;
+		idPedido = 1;
+		cout << "restaurante selecionado com sucesso!\n\n";
+	}else{
+		cout << "Aguardando informar restaurante\n\n";
+	}
 }
 
-string Ifood::verRestaurante(const string &nome) const
+void Ifood::pedir( string &prato )
 {
-    cout << rest;
+	if(prato == "refrigerente" || prato == "bolo" || prato == "hamburger"){
+		nomePedido = prato;
+		conta = 5.50;
+		cout << "O pedido efetuado\n\n";
+	}else{
+		cout << "O pedido não existe\n\n";
+	}
 }
 
-string Ifood::verRestaurante(const int id) const
+void Ifood::verPedido( const int idPed )
 {
-    cout << id + rest;
+	if(idPed == idPedido){
+		cout << "pedido numero" << idPedido << " - " << nomePedido << " - R$ " << conta <<"\n\n";
+	}
+}
+
+float Ifood::pagar( float valor )
+{
+	float r;
+	if( valor >= 0 ){
+		if( (conta - valor) <= 0 ){
+			r = valor - conta;
+		}else{
+			r = 0;
+			cout << "pagamento insuficiente\n";
+		}
+	}
+	return r;
 }
