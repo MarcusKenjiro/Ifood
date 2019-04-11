@@ -1,20 +1,34 @@
 #include "Ifood.h"
 
-Ifood::Ifood(int pedidos)
+int Ifood::numClientes = 0
+
+Ifood::Ifood(const int pedidos)
 {
 	setPedido( pedidos );
+    numClientes++;
 }
 
-Ifood::Ifood(const string &rest)
+Ifood::Ifood( string &rest)
 {
 	setPedido( rest );
+    numClientes++;
+}
+
+Ifood::Ifood(const Ifood &ped)
+{
+	idPedido = ped.idPedido;
+    nome = ped.nome;
+	nomePedido = ped.nomePedido;
+	conta = ped.conta;
+    
+    numClientes++;
 }
 
 Ifood::~Ifood()
 {
 }
 
-void Ifood::setPedido( int pedidos )
+void Ifood::setPedido(const int pedidos )
 {
     if( pedidos > 0 )
     {

@@ -10,13 +10,15 @@ using std::cout;
 class Ifood
 {
 public:
-	Ifood( int );
+	Ifood(const int );
 
-	Ifood( const string & );
+	Ifood( string & );
+    
+    Ifood(const Ifood &);
 
 	~Ifood();
 
-	void setPedido( int );
+	void setPedido(const int );
 
 	void setPedido ( const string & );
 
@@ -27,6 +29,8 @@ public:
 	float pagar( float );
     
 private:
+    const static string desenvolvedor = "Marcus Kenjiro";
+    static numClientes;
     int idPedido;
     string nome;
 	string nomePedido;

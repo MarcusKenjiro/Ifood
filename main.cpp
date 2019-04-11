@@ -31,5 +31,7 @@ int main(int argc, char **argv)
     cin >> valor;
     troco = ped2.pagar( valor );
 	cout << "Troco = R$" << troco << "\n";
+    
+    Ifood ped3(ped2);
 	return 0;
 }
