@@ -12,11 +12,15 @@ class Ifood
 public:
 	Ifood(const int );
 
-	Ifood( string & );
+	Ifood(const string & );
     
     Ifood(const Ifood &);
 
 	~Ifood();
+    
+    static float getVersion();
+    
+    void mostrarRestList();
 
 	void setPedido(const int );
 
@@ -29,8 +33,10 @@ public:
 	float pagar( float );
     
 private:
-    const static string desenvolvedor = "Marcus Kenjiro";
-    static numClientes;
+    const static int sizeRestList = 3;
+    const static float version = 1.0;
+    static string restList[sizeRestList];
+    static int numClientes;
     int idPedido;
     string nome;
 	string nomePedido;

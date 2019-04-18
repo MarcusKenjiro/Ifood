@@ -1,6 +1,8 @@
 #include "Ifood.h"
 
-int Ifood::numClientes = 0
+int Ifood::numClientes = 0;
+
+string Ifood::restList[sizeRestList]={"Subway","Bobs","McDonalds"};
 
 Ifood::Ifood(const int pedidos)
 {
@@ -8,7 +10,7 @@ Ifood::Ifood(const int pedidos)
     numClientes++;
 }
 
-Ifood::Ifood( string &rest)
+Ifood::Ifood(const string &rest )
 {
 	setPedido( rest );
     numClientes++;
@@ -26,6 +28,13 @@ Ifood::Ifood(const Ifood &ped)
 
 Ifood::~Ifood()
 {
+}
+
+void Ifood::mostrarRestList()
+{
+    for(int i=0; i<sizeRestList; i++){
+        cout << restList[i] << "\n";
+    }
 }
 
 void Ifood::setPedido(const int pedidos )
@@ -81,4 +90,9 @@ float Ifood::pagar( float valor )
 		}
 	}
 	return r;
+}
+
+float Ifood::getVersion()
+{
+    return version;
 }

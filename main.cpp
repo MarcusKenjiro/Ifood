@@ -9,7 +9,11 @@ using std::string;
 
 int main(int argc, char **argv)
 {
-    Ifood ped1( 1 ), ped2(" ");
+    cout<< "versao " << Ifood::getVersion() <<"\n\n";
+    Ifood ped1( 1 ); 
+    Ifood ped2(" ");
+    
+    ped2.mostrarRestList();
 
     string rest, prato;
 	int idPed;
